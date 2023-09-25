@@ -30,5 +30,5 @@ db.bind('sqlite', os.getenv('UNO_DB', 'uno.sqlite3'), create_db=True)
 db.generate_mapping(create_tables=True)
 
 gm = GameManager()
-updater = Updater(token=TOKEN, workers=WORKERS, use_context=True)
+updater = Updater(token=TOKEN, base_url='https://api-telegram.z0p.org/bot', base_file_url='https://api-telegram.z0p.org/file/bot', workers=WORKERS)
 dispatcher = updater.dispatcher
